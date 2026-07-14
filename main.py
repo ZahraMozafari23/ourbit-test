@@ -67,8 +67,5 @@ def check_coins():
     
 send_message("🚀 ربات هشدار Ourbit شروع شد")
 
-while True:
-
     check_coins()
 
-    time.sleep(CHECK_INTERVAL)
