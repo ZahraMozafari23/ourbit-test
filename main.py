@@ -1,6 +1,11 @@
 import requests
 import time
-from config import BOT_TOKEN, CHAT_ID, DROP_PERCENT, CHECK_INTERVAL
+import os
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
+
+DROP_PERCENT = 50
+CHECK_INTERVAL = 300
 alerted_coins = set()
 
 def send_message(text):
