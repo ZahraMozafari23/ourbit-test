@@ -1,4 +1,4 @@
-name: Ourbit Alert Bot
+name: Ourbit Alert Bot v2
 
 on:
   schedule:
