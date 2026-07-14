@@ -1,10 +1,12 @@
-name: Ourbit Test
+name: Ourbit Alert Bot
 
 on:
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
-  test:
+  run-bot:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +20,8 @@ jobs:
       - name: Install requests
         run: pip install requests
 
-      - name: Run test
-        run: python test.py
+      - name: Run bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python main.py
